@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 def index(request):
-    return redirect(reverse('bus_stations'))
+    return redirect(reverse("bus_stations"))
 
 
 def bus_stations(request):
@@ -11,7 +11,7 @@ def bus_stations(request):
     # также передайте в контекст список станций на странице
 
     context = {
-    #     'bus_stations': ...,
-    #     'page': ...,
+        #     'bus_stations': ...,
+        #     'page': ...,
     }
-    return render(request, 'stations/index.html', context)
+    return render(request, "stations/index.html", context)

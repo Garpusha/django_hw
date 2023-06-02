@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpRequest
 
 DATA = {
     'omlet': {
@@ -28,3 +29,16 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+def cook_book(request):
+    context = {'recipe':{}}
+    dish = request.path_info[1:-1]
+    servings = request.GET.get("servings", 1)
+    
+    if servings == 1 or servings == None or not servings.isdecimal():
+        context['recipe'] = DATA[dish]
+    else: 
+        servings = int(servings)        
+        for ingredient, count in DATA[dish].items():
+            context['recipe'][ingredient] = count * servings
+        
+    return render(request, 'calculator\index.html', context)
