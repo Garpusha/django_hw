@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from stations.read_csv import read_csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,7 +127,7 @@ STATICFILES_DIRS = [
 ]
 
 BUS_STATION_CSV = os.path.join(BASE_DIR, "data-398-2018-08-30.csv")
-
+MY_DATA = read_csv(BUS_STATION_CSV)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
