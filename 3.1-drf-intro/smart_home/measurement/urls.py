@@ -6,5 +6,5 @@ urlpatterns = [
     path("sensors/", SensorsView.as_view()),
     path("sensorupdate/<pk>/", SensorUpdate.as_view()),
     path("sensors/<pk>/", SensorView.as_view()),
-    path("measurements/", AddMeasurement.as_view()),
+    path("measurements/<pk>/", AddMeasurement.as_view()),
 ]
