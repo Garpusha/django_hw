@@ -2,8 +2,8 @@
 # TODO: ListCreateAPIView, RetrieveUpdateAPIView, CreateAPIView
 
 from rest_framework.generics import (
-    ListAPIView,
-    RetrieveAPIView,
+    # ListAPIView,
+    # RetrieveAPIView,
     RetrieveUpdateDestroyAPIView, CreateAPIView, ListCreateAPIView,
 )
 from .models import Sensor, Measurement
@@ -36,9 +36,9 @@ class SensorUpdate(RetrieveUpdateDestroyAPIView):
     #     return Response("Patch OK")
 
 
-class SensorView(RetrieveAPIView):
-    queryset = Sensor.objects.all()
-    serializer_class = SensorDetailSerializer
+# class SensorView(RetrieveAPIView):
+#     queryset = Sensor.objects.all()
+#     serializer_class = SensorDetailSerializer
 
 
 class AddMeasurement(CreateAPIView):
